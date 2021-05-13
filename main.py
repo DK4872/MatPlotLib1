@@ -1,0 +1,85 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# # zad1
+# x = np.linspace(1, 20)
+# plt.plot(x, 1 / x, label='1/x')
+# plt.xlabel('x')
+# plt.ylabel('f(x)')
+# plt.xlim([0, 20])
+# plt.ylim([0, 1])
+# plt.legend()
+# plt.show()
+# plt.savefig('zad1.png')
+# # zad2
+# x = np.linspace(1, 20)
+# plt.plot(x, 1 / x, 'g:>', label='f(x) = 1/x')
+# plt.xlabel('x')
+# plt.ylabel('f(x)')
+# plt.xlim([0, 20])
+# plt.ylim([0, 1])
+# plt.legend()
+# plt.title('Wykres funkcji f(x) dla x [1,20]')
+# plt.show()
+# plt.savefig('zad2.png')
+# # zad3
+# x = np.arange(0., 30., 0.1)
+# s = np.sin(x)
+# c = np.cos(x)
+# plt.plot(x, s, label='sin(x)')
+# plt.plot(x, c, label='cos(x)')
+# plt.legend()
+# plt.show()
+# plt.savefig('zad3.png')
+# # zad4
+# x1 = np.arange(0., 30., 0.1)
+# s1 = np.sin(x1)
+# c = np.cos(x1)
+# s2 = np.sin(-x1)
+# s3 = s1 + 2
+# plt.subplot(2, 1, 1)
+# plt.plot(x1, s1, label='sin(x)')
+# plt.plot(x1, c, label='cos(x)')
+# plt.subplot(2, 1, 2)
+# plt.plot(x1, s3, label='sin(x)')
+# plt.plot(x1, s2, label='sin(x)')
+# plt.legend()
+# plt.show()
+# plt.savefig('zad4.png')
+# # zad5
+# df = pd.read_csv("iris.csv", names=["sepal len", "sepal wid", "petal len", "petal wid", "class"])
+# df = pd.DataFrame(df)
+# df = df[["sepal len", "sepal wid", "class"]]
+# plt.xlabel("sepal length")
+# plt.ylabel("sepal width")
+# data = {"a": df["sepal len"], "b": df["sepal wid"], "c": np.random.randint(0, 150, 150)}
+# data["d"] = np.abs(data["a"] - data["b"])
+# plt.scatter("a", "b", c="c", s="d", data=data)
+# plt.title("Iris sepal length and width")
+# plt.show()
+# plt.savefig('zad5.png')
+# # zad6
+# df = pd.read_excel('imiona.xlsx')
+# aM = df[df.Plec == 'M']
+# aK = df[df.Plec == 'K']
+# aM = aM.groupby(['Rok']).Liczba.sum().reset_index()
+# aK = aK.groupby(['Rok']).Liczba.sum().reset_index()
+# b = df.groupby(['Rok']).Liczba.sum().reset_index()
+# plt.subplot(1, 3, 1)
+# plt.bar(df.Plec, df.Liczba)
+# plt.subplot(1, 3, 2)
+# plt.plot(aM.Rok, aM.Liczba, label='M')
+# plt.plot(aK.Rok, aK.Liczba, label='K')
+# plt.legend()
+# plt.subplot(1, 3, 3)
+# plt.bar(b.Rok, b.Liczba)
+# plt.show()
+# plt.savefig('zad6.png')
+# # zad7
+# df = pd.read_csv('zamowienia.csv', header=0, sep=';', decimal='.')
+# a = df.groupby(['Sprzedawca']).Utarg.sum().reset_index()
+# explode = (0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1)
+# plt.pie(a.Utarg, explode=explode, labels=a.Sprzedawca, autopct=lambda pct: '{:.1f}%'.format(pct), shadow=True)
+# plt.show()
+# plt.savefig('zad7.png')
